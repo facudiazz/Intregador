@@ -1,0 +1,118 @@
+header {
+    display: flex;
+    align-items: center;
+    background-color: #000000;
+    color: #c8c8c8ff;
+    position: relative;
+
+    img {
+        padding: 10px 5px 10px 20px;
+    }
+
+    h2 {
+        font-family: 'Poppins', sans-serif;
+        font-size: 1.5rem;
+        font-weight: 600;
+        letter-spacing: 1px;
+        color: #CB393D;
+        margin-left: 1rem;
+
+        & a {
+            text-decoration: none;
+            color: #CB393D;
+        }
+    }
+
+    .search-box {
+        display: flex;
+        align-items: center;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #c8c8c8;
+        padding: 5px 10px;
+        border-radius: 20px;
+      }
+      
+      .search-box input {
+        border: none;
+        background: none;
+        outline: none;
+        padding: 5px;
+        color: #000;
+        width: 400px; 
+      }
+      
+      .search-box button {
+        border: none;
+        background: none;
+        outline: none;
+        cursor: pointer;
+        padding: 5px;
+        color: #000;
+      }
+
+    & ul {
+        display: flex;
+        padding: 0;
+        width: 30%;
+        justify-content: space-evenly;
+        margin-left: auto;
+        cursor: pointer;
+    
+        & li {
+            list-style: none;
+
+            &:last-child {
+                padding-top: 5px;
+            }
+
+            & a {
+                position: relative;
+                font-family: 'Poppins', sans-serif;
+                letter-spacing: 0.5px;
+                padding: 0 10px;
+                text-decoration: none;
+                color: #CB393D;
+                font-weight: 500;
+
+                &:after {
+                    content: '';
+                    position: absolute;
+                    bottom: -10px;
+                    left: 0;
+                    width: 0;
+                    height: 3px;
+                    background-color: #ffffff;
+                    transform: scaleX(0);
+                    transform-origin: center;
+                    transition: transform 0.5s ease-in-out;
+                }
+
+                &:hover {
+                    color: #ffffff;
+                    &:after {
+                        width: 100%;
+                        transform: scaleX(1);
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+footer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    background-color: #000000;
+    color: #c8c8c8ff;
+}
+
+
+
