@@ -109,7 +109,7 @@ footer {
 
 .slider {
   width: 100%;
-  height: 750px;
+  height: 100vh;
   overflow: hidden;
 }
 .slider ul {
@@ -161,9 +161,9 @@ main {
   padding: 4rem;
 }
 main h2 {
-  text-align: center;
-  margin-bottom: 5rem;
-  font-size: 4rem;
+  margin-left: 14.5rem;
+  margin-bottom: 3rem;
+  font-size: 3rem;
 }
 main .all-products {
   display: flex;
@@ -215,7 +215,8 @@ main .all-products .button {
   margin-top: 1rem;
 }
 main .all-products .button .product-btn {
-  border: 2px solid #21201e;
+  border: 2px solid #CB393D;
+  color: #CB393D;
   border-radius: 0.5rem;
   font-weight: 600;
   padding: 0.5rem;
