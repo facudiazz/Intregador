@@ -3,7 +3,9 @@ header {
     align-items: center;
     background-color: #000000;
     color: #c8c8c8ff;
-    position: relative;
+    position: fixed;
+    width: 100%;
+    z-index: 1;
 
     img {
         padding: 10px 5px 10px 20px;
