@@ -1,3 +1,4 @@
+@charset "UTF-8";
 header {
   display: flex;
   align-items: center;
@@ -5,6 +6,7 @@ header {
   color: #c8c8c8;
   position: fixed;
   width: 100%;
+  height: 10vh;
   z-index: 1;
 }
 header img {
@@ -38,7 +40,7 @@ header .search-box input {
   outline: none;
   padding: 5px;
   color: #000;
-  width: 400px;
+  width: 20vw;
 }
 header .search-box button {
   border: none;
@@ -91,6 +93,94 @@ header ul li a:hover:after {
   transform: scaleX(1);
 }
 
+/* Estilos para el carrito de compras en modo oscuro */
+.cart-preview {
+  position: fixed;
+  right: 10px;
+  top: 70px;
+  width: 320px;
+  background-color: #212121; /* Fondo oscuro */
+  color: #ececec; /* Texto claro */
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  display: none;
+  opacity: 0.9;
+  overflow-y: auto;
+  z-index: 1000;
+}
+
+.cart-preview.visible {
+  display: block;
+}
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Alineación de elementos */
+  margin-bottom: 10px;
+  padding: 5px;
+  border-bottom: 1px solid #555;
+}
+
+.cart-item img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  margin-right: 10px;
+}
+
+.cart-item-details {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.cart-item-name {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.cart-item-price {
+  color: #CB393D;
+}
+
+.remove-item {
+  background-color: #CB393D;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.remove-item:hover {
+  background-color: #c32232;
+}
+
+/* Estilos adicionales para el carrito */
+.cart-summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid #555;
+}
+
+.clear-cart-btn {
+  background-color: #CB393D;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.clear-cart-btn:hover {
+  background-color: #c32232;
+}
+
 footer {
   width: 100%;
   display: flex;
@@ -111,7 +201,7 @@ footer {
 
 .slider {
   width: 100%;
-  height: 100%;
+  height: 80vh;
   overflow: hidden;
 }
 .slider ul {
@@ -223,6 +313,36 @@ main .all-products .button .product-btn {
   font-weight: 600;
   padding: 0.5rem;
   cursor: pointer;
+}
+main .slider-main {
+  width: 80vw;
+  height: auto;
+  margin: auto;
+  overflow: hidden;
+  margin-bottom: 3rem;
+}
+main .slider-main .slide-track {
+  display: flex;
+  animation: scroll 30s linear infinite;
+  -webkit-animation: scroll 30s linear infinite;
+  width: 2400px;
+}
+main .slider-main .slide {
+  width: 100%;
+}
+main .slider-main .slide img {
+  margin: 0.5rem;
+  width: 120px;
+}
+@keyframes scroll {
+  0% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+  100% {
+    -webkit-transform: translateX(-1400px);
+    transform: translateX(-1400px);
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */

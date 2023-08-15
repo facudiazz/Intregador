@@ -82,6 +82,42 @@ main {
 
         }
 
+        .slider-main {
+            width: 80vw;
+            height: auto;
+            margin: auto;
+            overflow: hidden;
+            margin-bottom: 3rem;
+
+            & .slide-track {
+                display: flex;
+                animation: scroll 30s linear infinite;
+                -webkit-animation: scroll 30s linear infinite;
+                width: calc(200px * 12);
+            }
+            
+            & .slide {
+                width: 100%;
+            }
+            
+            & .slide img {
+                margin: 0.5rem;
+                width: 120px;
+            }
+            
+            @keyframes scroll {
+                0% {
+                    -webkit-transform: translateX(0);
+                    transform: translateX(0);
+                }
+                100% {
+                    -webkit-transform: translateX(calc(-200px * 7));
+                    transform: translateX(calc(-200px * 7));
+                }
+            }
+        }
+        
+
         
 
 }

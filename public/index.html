@@ -21,7 +21,7 @@
   <body>
     <header>
       <a href="index.html"
-        ><img src="logo.png" alt="imagen" width="70px" height="55px"
+        ><img src="img/logo.png" alt="imagen" width="70px" height="55px"
       /></a>
       <h2><a href="index.html">Diamond System</a></h2>
       <ul>
@@ -31,6 +31,17 @@
         <li><a href="nosotros.html">Nosotros</a></li>
         <li><i class="fa-solid fa-cart-shopping"></i></li>
       </ul>
+      <div class="cart-preview">
+        <h4>Carrito de Compras</h4>
+        <ul class="cart-items-preview">
+          <!-- Los elementos del carrito se agregarán aquí dinámicamente -->
+        </ul>
+        <div class="cart-summary">
+          <p><span class="total-price"></span></p>
+          <button class="clear-cart-btn">Vaciar Carrito</button>
+        </div>
+      </div>
+
       <div class="search-box">
         <input type="text" placeholder="Buscar" />
         <button><i class="fas fa-search"></i></button>
@@ -40,111 +51,141 @@
       <div class="slider">
         <ul>
           <li>
-            <img src="./img1.jpg" alt="" />
+            <img src="img/img1.jpg" alt="" />
           </li>
           <li>
-            <img src="./img2.jpg" alt="" />
+            <img src="img/img2.jpg" alt="" />
           </li>
           <li>
-            <img src="./img3.jpg" alt="" />
+            <img src="img/img3.jpg" alt="" />
           </li>
           <li>
-            <img src="./img5.jpg" alt="" />
+            <img src="img/img5.jpg" alt="" />
           </li>
         </ul>
       </div>
     </aside>
     <main>
       <section class="products">
+        <div class="slider-main">
+          <div class="slide-track">
+            <div class="slide">
+              <img src="./img/redragon-logo.png" alt="" />
+            </div>
+            <div class="slide">
+              <img src="./img/hyperx-logo.png" alt="" />
+            </div>
+            <div class="slide">
+              <img src="./img/razer-logo.png" alt="" />
+            </div>
+            <div class="slide">
+              <img src="./img/amd-logo.png" alt=""/>
+            </div>
+            <div class="slide">
+              <img src="./img/nvidia-logo.png" alt="" />
+            </div>
+            <div class="slide">
+              <img src="./img/seagate-logo.png" alt="" />
+            </div>
+          </div>
+        </div>
         <h2>Productos</h2>
 
         <div class="all-products">
-            <div class="product">
-              <img src="ram.png" alt="">
-              <div class="info">
-                <h4 class="product-title">Memoria RAM</h3>
-                <p class="product-info">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.</p>
-                <p class="product-price">$12.699</p>
-                <div class="button">
-                  <a class="product-btn">Agregar al carrito</a>
-                </div>
+          <div class="product">
+            <img src="img/ram.png" alt="" />
+            <div class="info">
+              <h4 class="product-title">Memoria RAM</h4>
+              <p class="product-info">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Quisquam, voluptatum.
+              </p>
+              <p class="product-price">$12,699</p>
+              <div class="button">
+                <a class="product-btn">Agregar al carrito</a>
               </div>
             </div>
+          </div>
 
-            <div class="product">
-              <img src="ZEUS-X.png" alt="">
-              <div class="info">
-                <h4 class="product-title">Auriculares ZEUS X</h3>
-                <p class="product-info">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.</p>
-                <p class="product-price">$47.286</p>
-                <div class="button">
-                  <a class="product-btn">Agregar al carrito</a>
-                </div>
+          <div class="product">
+            <img src="img/ZEUS-X.png" alt="" />
+            <div class="info">
+              <h4 class="product-title">Auriculares ZEUS X</h4>
+              <p class="product-info">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Quisquam, voluptatum.
+              </p>
+              <p class="product-price">$47,286</p>
+              <div class="button">
+                <a class="product-btn">Agregar al carrito</a>
               </div>
             </div>
+          </div>
 
-            <div class="product">
-              <img src="KUMARA.png" alt="">
-              <div class="info">
-                <h4 class="product-title">Teclado Redragon Kumara</h3>
-                <p class="product-info">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.</p>
-                <p class="product-price">$41.001</p>
-                <div class="button">
-                  <a class="product-btn">Agregar al carrito</a>
-                </div>
+          <div class="product">
+            <img src="img/KUMARA.png" alt="" />
+            <div class="info">
+              <h4 class="product-title">Teclado Redragon Kumara</h4>
+              <p class="product-info">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Quisquam, voluptatum.
+              </p>
+              <p class="product-price">$41,001</p>
+              <div class="button">
+                <a class="product-btn">Agregar al carrito</a>
               </div>
             </div>
+          </div>
 
-            <div class="product">
-              <img src="i9.png" alt="">
-              <div class="info">
-                <h4 class="product-title">Procesador Intel I9-13900K</h3>
-                <p class="product-info">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.</p>
-                <p class="product-price">$831.998</p>
-                <div class="button">
-                  <a class="product-btn">Agregar al carrito</a>
-                </div>
+          <div class="product">
+            <img src="img/i9.png" alt="" />
+            <div class="info">
+              <h4 class="product-title">Procesador Intel I9-13900K</h4>
+              <p class="product-info">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Quisquam, voluptatum.
+              </p>
+              <p class="product-price">$831,998</p>
+              <div class="button">
+                <a class="product-btn">Agregar al carrito</a>
               </div>
             </div>
+          </div>
 
-            <div class="product">
-              <img src="4090.png" alt="">
-              <div class="info">
-                <h4 class="product-title">Nvidia GeForce RTX 4090</h3>
-                <p class="product-info">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.</p>
-                <p class="product-price">$2.546.999</p>
+          <div class="product">
+            <img src="img/4090.png" alt="" />
+            <div class="info">
+              <h4 class="product-title">Nvidia GeForce RTX 4090</h4>
+              <p class="product-info">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Quisquam, voluptatum.
+              </p>
+              <p class="product-price">$2,546,999</p>
 
-                <div class="button">
-                  <a class="product-btn">Agregar al carrito</a>
-                </div>
+              <div class="button">
+                <a class="product-btn">Agregar al carrito</a>
               </div>
             </div>
+          </div>
 
-            <div class="product">
-              <img src="quadcast.png" alt="">
-              <div class="info">
-                <h4 class="product-title">Micrófono HyperX QuadCast</h3>
-                <p class="product-info">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.</p>
-                <p class="product-price">$90.999</p>
+          <div class="product">
+            <img src="img/quadcast.png" alt="" />
+            <div class="info">
+              <h4 class="product-title">Micrófono HyperX QuadCast</h4>
+              <p class="product-info">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Quisquam, voluptatum.
+              </p>
+              <p class="product-price">$90,999</p>
 
-                <div class="button">
-                  <a class="product-btn">Agregar al carrito</a>
-                </div>
+              <div class="button">
+                <a class="product-btn">Agregar al carrito</a>
               </div>
             </div>
+          </div>
         </div>
       </section>
-
-      
     </main>
-    <footer>
-      <p id="parrafo-footer">
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corporis id
-        modi, perspiciatis, maxime, beatae voluptatibus consectetur eos ducimus
-        nobis provident voluptas in illo. Quae est, quasi officia eius sint
-        minima?
-      </p>
-      <a href="contacto.html">Contactanos!</a>
-    </footer>
   </body>
+  <script src="../src/script.js"></script>
 </html>
