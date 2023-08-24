@@ -33,3 +33,11 @@
     100% {margin-left: -300%;}
 }
 
+@media screen and (max-width: 1650px) {
+    .slider {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+

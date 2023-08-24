@@ -18,10 +18,11 @@
       crossorigin="anonymous"
     ></script>
   </head>
-  <body>
+  <body class="body-alta">
+    
     <header>
       <a href="index.html"
-        ><img src="logo.png" alt="imagen" width="70px" height="55px"
+        ><img src="img/logo.png" alt="imagen" width="70px" height="55px"
       /></a>
       <h2><a href="index.html">Diamond System</a></h2>
       <ul>
@@ -31,28 +32,73 @@
         <li><a href="nosotros.html">Nosotros</a></li>
         <li><i class="fa-solid fa-cart-shopping"></i></li>
       </ul>
-      <div class="cart-preview">
-        <h4>Carrito de Compras</h4>
-        <ul class="cart-items-preview">
-          <!-- Los elementos del carrito se agregarán aquí dinámicamente -->
-        </ul>
-        <div class="cart-summary">
-          <p><span class="total-price"></span></p>
-          <button class="clear-cart-btn">Vaciar Carrito</button>
-        </div>
-      </div>
-      
-      <div class="search-box">
-        <input type="text" placeholder="Buscar" />
-        <button><i class="fas fa-search"></i></button>
-      </div>
     </header>
-    <main>
+      <h1>
+        Registrá tu producto
+      </h1>
+    <main class="main-alta">
+    <section class="survey">
+        <form id="survey-form">
+          <div>
+            <label for="name" id="name-label">Nombre del producto
+              <input type="text" id="name" required placeholder="Ingresa el nombre del producto" />
+            </label>
+            <span id="error"></span>
+          </div>
+        <div>
+          <label for="price" id="price-label">Precio
+            <input
+              type="number"
+              id="price"
+              required
+              placeholder="Precio del producto en pesos argentinos"/>
+          </label>
+        </div>
+        <div>
+          <label for="description" id="description-label">Descripcion del producto 
+            <input
+              type="text"
+              id="description"
+              min="8"
+              max="22"
+              placeholder="Ingresa la descripción del producto"/>
+          </label>
+        </div>
+
+        <p>Categoria del producto</p>
+        <select id="dropdown">
+          <option disabled selected>Seleccioná una categoría</option>
+          <option>Teclados</option>
+          <option>Auriculares</option>
+          <option>Micrófonos</option>
+          <option>Procesadores</option>
+          <option>Placas de video</option>
+          <option>Monitores</option>
+          <option>Mouse</option>
+          <option>Memorias RAM</option>
+          <option>Discos duros / solidos</option>
+        </select>
+        
+        <label for="photo">Foto del producto</label>
+        <input type="file" id="photo" name="photo" accept="image/*">
+
+      <fieldset id="used">
+        <p>Es usado?</p>
+        <div>
+          <input type="radio" id="yes" value="yes" name="recommend" />
+          <label for="yes">Si</label>
+        </div>
+        <div>
+          <input type="radio" id="no" value="no" name="recommend"/>
+          <label for="no">No</label>
+        </div>
+      </fieldset>
+    
+        <div>
+          <input id="submit" type="submit" name="Agregar Producto"/>
+        </div>
+    </section>
 
     </main>
-    <footer>
-        <p id="parrafo-footer">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corporis id modi, perspiciatis, maxime, beatae voluptatibus consectetur eos ducimus nobis provident voluptas in illo. Quae est, quasi officia eius sint minima?</p>
-        <a href="contacto.html">Contactanos!</a>
-    </footer>
 </body>
 </html>
