@@ -36,8 +36,8 @@ document.addEventListener('DOMContentLoaded', () => {
             const tituloElement = producto.querySelector('.product-title');
             const titulo = tituloElement.textContent.replace(/(\d+% OFF\s*)?$/, '').trim();
             const precioTexto = producto.querySelector('.product-price').textContent.replace('$', '');
-            const precio = parseFloat(precioTexto.replace('.', '')); 
-
+            const precio = parseFloat(precioTexto.replace('.', ''));
+    
             if (carritoProductos[titulo]) {
                 carritoProductos[titulo].cantidad++;
             } else {
@@ -47,6 +47,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 };
             }
 
+            const boton = producto.querySelector('.product-btn');
+            boton.textContent = 'Agregado al carrito';
+            boton.classList.add('cart-added');
+    
             actualizarCarrito();
         }
     }

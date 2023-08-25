@@ -371,6 +371,12 @@ main .all-products .button .product-btn {
   padding: 0.5rem;
   cursor: pointer;
 }
+main .all-products .button .product-btn.cart-added {
+  transition: background-color 0.3s ease, color 0.3s ease;
+  border: 2px solid #42ad21;
+  color: #42ad21;
+  cursor: not-allowed;
+}
 main .slider-main {
   width: 80vw;
   height: auto;
