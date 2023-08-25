@@ -54,16 +54,19 @@ document.addEventListener('DOMContentLoaded', () => {
     function eliminarElemento(e) {
         if (e.target.classList.contains('delete')) {
             const fila = e.target.closest('tr');
-            const titulo = fila.querySelector('td:nth-child(1)').textContent.split(' x')[0];
+            const tituloElement = fila.querySelector('td:nth-child(1)');
+            const productoNombre = tituloElement.textContent.trim();
+            const titulo = productoNombre.split(' x')[0];
             
-            if (carritoProductos[titulo].cantidad > 1) {
-                carritoProductos[titulo].cantidad--;
-            } else {
-                delete carritoProductos[titulo];
+            if (carritoProductos[titulo]) {
+                if (carritoProductos[titulo].cantidad > 1) {
+                    carritoProductos[titulo].cantidad--;
+                } else {
+                    delete carritoProductos[titulo];
+                }
+                actualizarCarrito();
+                fila.remove();
             }
-
-            actualizarCarrito();
-            fila.remove();
         }
         e.preventDefault();
         e.stopPropagation();

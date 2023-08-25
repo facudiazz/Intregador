@@ -82,12 +82,20 @@
         font-size: 14px;
         transition: border-color 0.3s, box-shadow 0.3s;
         vertical-align: middle;
+        margin-left: 0.5rem;
       }
       
       .cantidad-input:focus {
         outline: none;
         border-color: #3498db;
         box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
+      }
+
+      .total {
+        color: #FFFFFF;
+        font-size: 1rem;
+        margin-top: 1rem;
+
       }
 
 }

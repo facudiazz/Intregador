@@ -88,9 +88,6 @@ header ul {
 header ul li {
   list-style: none;
 }
-header ul li:last-child {
-  padding-top: 5px;
-}
 header ul li a {
   position: relative;
   font-family: "Poppins", sans-serif;
@@ -478,11 +475,17 @@ main .slider-main .slide img {
   font-size: 14px;
   transition: border-color 0.3s, box-shadow 0.3s;
   vertical-align: middle;
+  margin-left: 0.5rem;
 }
 .submenu .cantidad-input:focus {
   outline: none;
   border-color: #3498db;
   box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
+}
+.submenu .total {
+  color: #FFFFFF;
+  font-size: 1rem;
+  margin-top: 1rem;
 }
 
 /*# sourceMappingURL=styles.css.map */
