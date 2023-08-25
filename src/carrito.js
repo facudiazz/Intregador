@@ -33,7 +33,8 @@ document.addEventListener('DOMContentLoaded', () => {
     function agregarAlCarrito(e) {
         if (e.target.classList.contains('product-btn')) {
             const producto = e.target.closest('.product');
-            const titulo = producto.querySelector('.product-title').textContent;
+            const tituloElement = producto.querySelector('.product-title');
+            const titulo = tituloElement.textContent.replace(/(\d+% OFF\s*)?$/, '').trim();
             const precioTexto = producto.querySelector('.product-price').textContent.replace('$', '');
             const precio = parseFloat(precioTexto.replace('.', '')); 
 
@@ -78,18 +79,58 @@ document.addEventListener('DOMContentLoaded', () => {
     function actualizarCarrito() {
         lista.innerHTML = '';
         let total = 0;
+      
         for (const producto in carritoProductos) {
-            const { cantidad, precio } = carritoProductos[producto];
-            const fila = document.createElement('tr');
-            fila.innerHTML = `
-                <td>${producto} x${cantidad}</td>
-                <td>$${(precio * cantidad).toLocaleString('es-AR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</td>
-                <td><a href="#" class="delete">X</a></td>
-            `;
-            total += precio * cantidad;
-            lista.appendChild(fila);
+          const { cantidad, precio } = carritoProductos[producto];
+      
+          const fila = document.createElement('tr');
+          fila.innerHTML = `
+            <td>
+              ${producto}
+              <input
+                type="number"
+                class="cantidad-input"
+                min="1"
+                max="5"
+                value="${cantidad}"
+              />
+            </td>
+            <td>
+              $${(precio * cantidad).toLocaleString('es-AR', {
+                minimumFractionDigits: 2,
+                maximumFractionDigits: 2,
+              })}
+            </td>
+            <td><a href="#" class="delete">X</a></td>
+          `;
+      
+          total += precio * cantidad;
+          lista.appendChild(fila);
+    
+          fila.querySelector('.cantidad-input').addEventListener('change', (e) => {
+            const nuevaCantidad = parseInt(e.target.value);
+            carritoProductos[producto].cantidad = nuevaCantidad;
+            actualizarCarrito();
+          });
         }
+      
         const totalElement = document.getElementById('total');
-        totalElement.textContent = `Total: $${total.toLocaleString('es-AR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+        totalElement.textContent = `Total: $${total.toLocaleString('es-AR', {
+          minimumFractionDigits: 2,
+          maximumFractionDigits: 2,
+        })}`;
     }
-});
+      
+
+        document.querySelectorAll('.cantidad-input').forEach((input) => {
+          input.addEventListener('change', (e) => {
+            const cantidadNueva = parseInt(e.target.value);
+            const fila = e.target.closest('tr');
+            const producto = fila.querySelector('td:nth-child(1)').textContent;
+
+            carritoProductos[producto].cantidad = Math.min(cantidadNueva, 5);
+      
+            actualizarCarrito();
+          });
+        });
+      });
