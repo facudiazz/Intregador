@@ -129,6 +129,9 @@ header ul li a:hover:after {
   header h2 {
     display: none;
   }
+  header .input {
+    width: 40vw;
+  }
   header .search-box input {
     border: none;
     background: none;
@@ -161,6 +164,7 @@ header ul li a:hover:after {
     transform: scale(1);
   }
   #links li {
+    font-size: 1.5rem;
     text-align: center;
     margin: 8px 0;
   }
@@ -399,6 +403,69 @@ main .slider-main .slide img {
     -webkit-transform: translateX(-1400px);
     transform: translateX(-1400px);
   }
+}
+
+.submenu {
+  position: relative;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+}
+.submenu #cart-img {
+  margin-right: 3rem;
+}
+.submenu #cart {
+  display: none;
+}
+.submenu #cart.abierto {
+  display: block;
+  position: absolute;
+  top: calc(5vh + 10px);
+  width: 30vw;
+  height: 100vh;
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.5058823529);
+  min-width: 400px;
+  padding: 10px;
+  right: 0;
+}
+.submenu table {
+  width: 100%;
+}
+.submenu th, .submenu td {
+  padding: 1rem 0;
+  color: #FFFFFF;
+}
+.submenu .delete {
+  background-color: #F35200;
+  border-radius: 50%;
+  padding: 5px 10px;
+  color: white;
+  font-weight: 800;
+}
+.submenu .btn-cart {
+  display: inline-block;
+  padding: 8px 17px;
+  border: 1px solid #F35200;
+  border-radius: 20px;
+  color: #FFFFFF;
+  margin-top: 1rem;
+}
+.submenu .btn-cart:hover {
+  background-color: #F35200;
+}
+.submenu hr {
+  margin-top: 1rem;
+}
+.submenu #cart-footer {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.submenu #cart-footer .cart-total {
+  margin-top: 0.5rem;
+  font-size: 1.5rem;
+  display: inline-block;
+  color: #FFFFFF;
 }
 
 /*# sourceMappingURL=styles.css.map */

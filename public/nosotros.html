@@ -8,15 +8,49 @@
 </head>
 <body>
     <header>
-        <a href="index.html"><img src="https://cataas.com/cat?width=100&height=50" alt="imagen"></a>
-        <h2>Gatitos!</h2>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="alta.html">Alta</a></li>
-            <li><a href="contacto.html">Contacto</a></li>
-            <li><a class="active" href="nosotros.html">Sobre Nosotros</a></li>
+        <a href="index.html"
+          ><img src="img/logo.png" alt="imagen" width="70px" height="55px"
+        /></a>
+  
+        <h2><a href="index.html">Diamond System</a></h2>
+  
+        <a href="javascript:void(0);" onclick="openMenu()" id="menu">
+          <button class="menu__icon">
+            <span></span>
+            <span></span>
+            <span></span></button>
+          </a>
+  
+        <ul class="nav-list" id="links">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="alta.html">Alta</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+          <li><a href="nosotros.html">Nosotros</a></li>
+          <li><i class="fas fa-shopping-cart"></i></li>
         </ul>
-    </header>
+  
+        <div class="container">
+          <input
+            type="text"
+            name="text"
+            class="input"
+            placeholder="Buscar productos"
+          />
+          <button class="search__btn">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              width="22"
+              height="22"
+            >
+              <path
+                d="M18.031 16.6168L22.3137 20.8995L20.8995 22.3137L16.6168 18.031C15.0769 19.263 13.124 20 11 20C6.032 20 2 15.968 2 11C2 6.032 6.032 2 11 2C15.968 2 20 6.032 20 11C20 13.124 19.263 15.0769 18.031 16.6168ZM16.0247 15.8748C17.2475 14.6146 18 12.8956 18 11C18 7.1325 14.8675 4 11 4C7.1325 4 4 7.1325 4 11C4 14.8675 7.1325 18 11 18C12.8956 18 14.6146 17.2475 15.8748 16.0247L16.0247 15.8748Z"
+                fill="#efeff1"
+              ></path>
+            </svg>
+          </button>
+        </div>
+      </header>
     <main>
 
     </main>

@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="styles.css" />
 
     <script src="../src/script.js"></script>
+    <script src="../src/carrito.js"></script>
 
     <script
       src="https://kit.fontawesome.com/7e9799981f.js"
@@ -32,15 +33,15 @@
         <button class="menu__icon">
           <span></span>
           <span></span>
-          <span></span></button>
-        </a>
+          <span></span>
+        </button>
+      </a>
 
       <ul class="nav-list" id="links">
         <li><a href="index.html">Inicio</a></li>
         <li><a href="alta.html">Alta</a></li>
         <li><a href="contacto.html">Contacto</a></li>
         <li><a href="nosotros.html">Nosotros</a></li>
-        <li><i class="fas fa-shopping-cart"></i></li>
       </ul>
 
       <div class="container">
@@ -64,6 +65,34 @@
           </svg>
         </button>
       </div>
+
+      <section>
+        <ul>
+          <li class="submenu">
+            <i class="fas fa-shopping-cart" id="cart-img"></i>
+            <div id="cart">
+              <table id="cart-list">
+                <thead>
+                  <tr>
+                    <th>Producto</th>
+                    <th>Precio</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody id="cart-items"></tbody>
+              </table>   
+              <hr>   
+              <div id="cart-footer">
+                <a href="#" id="cart-clear" class="btn-cart">Vaciar Carrito</a>
+                <div id="total">
+                  Total: $0.00
+                </div>
+                
+              </div>      
+            </div>
+          </li>
+        </ul>
+      </section>
     </header>
     <aside>
       <div class="slider">
@@ -109,7 +138,7 @@
         </div>
         <h2>Productos</h2>
 
-        <div class="all-products">
+        <div class="all-products" id="all-products">
           <div class="product">
             <img src="img/ram.png" alt="" />
             <div class="info">
@@ -120,7 +149,7 @@
               </p>
               <p class="product-price">$12.699</p>
               <div class="button">
-                <a class="product-btn">Agregar al carrito</a>
+                <a class="product-btn" data-id="1" data-img-src>Agregar al carrito</a>
               </div>
             </div>
           </div>
@@ -138,7 +167,7 @@
               <span class="discount">$50.000</span>
               <p class="product-price">$42.500</p>
               <div class="button">
-                <a class="product-btn">Agregar al carrito</a>
+                <a class="product-btn" data-id="2" data-img-src>Agregar al carrito</a>
               </div>
             </div>
           </div>
@@ -153,7 +182,7 @@
               </p>
               <p class="product-price">$40.999</p>
               <div class="button">
-                <a class="product-btn">Agregar al carrito</a>
+                <a class="product-btn" data-id="3" data-img-src>Agregar al carrito</a>
               </div>
             </div>
           </div>
@@ -168,7 +197,7 @@
               </p>
               <p class="product-price">$831.998</p>
               <div class="button">
-                <a class="product-btn">Agregar al carrito</a>
+                <a class="product-btn" data-id="4" data-img-src>Agregar al carrito</a>
               </div>
             </div>
           </div>
@@ -176,7 +205,7 @@
           <div class="product">
             <img src="img/4090.png" alt="" />
             <div class="info">
-              <h4 class="product-title">Nvidia GeForce RTX 4090 </h4>
+              <h4 class="product-title">Nvidia GeForce RTX 4090</h4>
               <p class="product-info">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 Quisquam, voluptatum.
@@ -184,7 +213,7 @@
               <p class="product-price">$2.546.999</p>
 
               <div class="button">
-                <a class="product-btn">Agregar al carrito</a>
+                <a class="product-btn" data-id="5" data-img-src>Agregar al carrito</a>
               </div>
             </div>
           </div>
@@ -200,7 +229,7 @@
               <p class="product-price">$90.999</p>
 
               <div class="button">
-                <a class="product-btn">Agregar al carrito</a>
+                <a class="product-btn" data-id="6" data-img-src>Agregar al carrito</a>
               </div>
             </div>
           </div>
