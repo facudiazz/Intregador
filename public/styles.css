@@ -306,7 +306,7 @@ main .all-products .product-info {
   margin-bottom: 1rem;
 }
 main .all-products .product {
-  background: #ffffff;
+  background: linear-gradient(180deg, #ffffff 50%, #918e8e 100%);
   color: #21201e;
   text-align: center;
   width: 400px;
@@ -337,7 +337,18 @@ main .all-products .product .discount {
   color: #CB393D;
 }
 main .all-products .product:hover img {
-  scale: 1.1;
+  animation: rotateAndScale 1s forwards;
+}
+@keyframes rotateAndScale {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  50% {
+    transform: rotate(360deg) scale(1);
+  }
+  100% {
+    transform: rotate(360deg) scale(1.4);
+  }
 }
 main .all-products .product:hover .discount {
   display: block;
@@ -371,7 +382,7 @@ main .all-products .button .product-btn {
   padding: 0.5rem;
   cursor: pointer;
 }
-main .all-products .button .product-btn.cart-added {
+main .all-products .button .cart-added {
   transition: background-color 0.3s ease, color 0.3s ease;
   border: 2px solid #42ad21;
   color: #42ad21;
@@ -426,7 +437,7 @@ main .slider-main .slide img {
   width: 30vw;
   height: 100vh;
   z-index: 1;
-  background-color: rgba(0, 0, 0, 0.5058823529);
+  background-color: #000000;
   min-width: 400px;
   padding: 10px;
   right: 0;
@@ -435,12 +446,13 @@ main .slider-main .slide img {
 .submenu table {
   width: 100%;
 }
-.submenu th, .submenu td {
+.submenu th,
+.submenu td {
   padding: 1rem 0;
-  color: #FFFFFF;
+  color: #ffffff;
 }
 .submenu .delete {
-  background-color: #F35200;
+  background-color: #f35200;
   border-radius: 50%;
   padding: 5px 10px;
   color: white;
@@ -450,13 +462,13 @@ main .slider-main .slide img {
 .submenu .btn-cart {
   display: inline-block;
   padding: 8px 17px;
-  border: 1px solid #F35200;
+  border: 1px solid #f35200;
   border-radius: 20px;
-  color: #FFFFFF;
+  color: #ffffff;
   margin-top: 1rem;
 }
 .submenu .btn-cart:hover {
-  background-color: #F35200;
+  background-color: #f35200;
 }
 .submenu hr {
   margin-top: 1rem;
@@ -470,7 +482,7 @@ main .slider-main .slide img {
   margin-top: 0.5rem;
   font-size: 1.5rem;
   display: inline-block;
-  color: #FFFFFF;
+  color: #ffffff;
 }
 .submenu .cantidad-input {
   width: 40px;
@@ -489,9 +501,87 @@ main .slider-main .slide img {
   box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
 }
 .submenu .total {
-  color: #FFFFFF;
+  color: #ffffff;
   font-size: 1rem;
   margin-top: 1rem;
+}
+
+@media screen and (width < 1500px) {
+  .submenu #cart.abierto {
+    width: 50vw;
+    min-width: 600px;
+  }
+}
+@media screen and (width < 650px) {
+  .submenu #cart.abierto {
+    display: flex;
+    flex-direction: column;
+    min-width: 90vw;
+    font-size: 0.8rem;
+  }
+  .submenu table {
+    width: auto;
+  }
+  .submenu th,
+  .submenu td {
+    padding: 1rem;
+  }
+  .submenu #cart-img {
+    margin-right: 2rem;
+  }
+  .submenu .cantidad-input {
+    width: 35px;
+    height: 25px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 1px;
+    font-size: 8px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    vertical-align: middle;
+    margin-left: 0.5rem;
+    box-sizing: border-box;
+  }
+  .submenu .cantidad-input:focus {
+    outline: none;
+    border-color: #3498db;
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
+  }
+  .submenu .cantidad-input + * {
+    margin-left: 0.5rem;
+  }
+}
+@media screen and (width < 400px) {
+  .submenu #cart.abierto {
+    display: flex;
+    flex-direction: column;
+    min-width: 100vw;
+    font-size: 0.7rem;
+  }
+  .submenu #cart-img {
+    margin-right: 1rem;
+  }
+  .submenu .cantidad-input {
+    width: 25px;
+    height: 20px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 1px;
+    font-size: 8px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    vertical-align: middle;
+    margin-left: 0.5rem;
+    box-sizing: border-box;
+  }
+  .submenu .cantidad-input:focus {
+    outline: none;
+    border-color: #3498db;
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
+  }
+  .submenu .cantidad-input + * {
+    margin-left: 0.5rem;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */
