@@ -26,7 +26,7 @@ main {
             margin-bottom: 1rem;
         }
          & .product {
-            background: #ffffff;
+            background: linear-gradient(180deg, #ffffff 50%, #918e8e 100%);
             color: #21201e;
             text-align: center;
             width: 400px;
@@ -62,8 +62,20 @@ main {
             }
 
             &:hover img {
-                scale: 1.1;
-            }
+                animation: rotateAndScale 1s forwards; 
+              }
+              
+              @keyframes rotateAndScale {
+                0% {
+                  transform: rotate(0deg) scale(1);
+                }
+                50% {
+                  transform: rotate(360deg) scale(1);
+                }
+                100% {
+                  transform: rotate(360deg) scale(1.4);
+                }
+              }
 
             &:hover .discount {
                 display: block;
@@ -104,13 +116,13 @@ main {
                 font-weight: 600;
                 padding: 0.5rem;
                 cursor: pointer;
+            }
 
-                &.cart-added {
-                    transition: background-color 0.3s ease, color 0.3s ease;
-                    border: 2px solid #42ad21;
-                    color: #42ad21;
-                    cursor: not-allowed; 
-                }
+            .cart-added {
+                transition: background-color 0.3s ease, color 0.3s ease;
+                border: 2px solid #42ad21;
+                color: #42ad21;
+                cursor: not-allowed; 
             }
         }
 
@@ -152,8 +164,5 @@ main {
 
         }
         
-
-        
-
 }
 
