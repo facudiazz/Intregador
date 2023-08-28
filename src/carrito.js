@@ -12,10 +12,10 @@ document.addEventListener('DOMContentLoaded', () => {
         carritoIcono.addEventListener('click', toggleCarrito);
         document.addEventListener('click', manejarClic);
         document.getElementById('all-products').addEventListener('click', function (event) {
-    if (event.target.classList.contains('product-btn')) {
-        agregarAlCarrito(event);
-    }
-});
+            if (event.target.classList.contains('product-btn')) {
+                agregarAlCarrito(event);
+            }
+        });
         lista.addEventListener('click', eliminarElemento);
         vaciarCarritoBtn.addEventListener('click', vaciarCarrito);
     }
@@ -36,9 +36,9 @@ document.addEventListener('DOMContentLoaded', () => {
         if (e.target.classList.contains('product-btn')) {
             const producto = e.target.closest('.product');
             const tituloElement = producto.querySelector('.product-title');
-            const titulo = tituloElement.textContent.replace(/(\d+% OFF\s*)?$/, '').trim();
-            const precioTexto = producto.querySelector('.product-price').textContent.replace('$', '');
-            const precio = parseFloat(precioTexto.replace('.', ''));
+            const titulo = tituloElement.textContent.trim();
+            const precioTexto = producto.querySelector('.product-price').textContent;
+            const precio = parseInt(precioTexto.replace('$', '').replace(/\./g, ''));
     
             if (carritoProductos[titulo]) {
                 carritoProductos[titulo].cantidad++;
@@ -49,107 +49,82 @@ document.addEventListener('DOMContentLoaded', () => {
                 };
             }
     
-            const boton = producto.querySelector('.product-btn');
-            boton.textContent = 'En el carrito';
-            boton.classList.add('cart-added');
-    
             actualizarCarrito();
+
+            setTimeout(() => {
+                toggleCarrito();
+            }, 100);
         }
     }
     
-function eliminarElemento(e) {
 
-    if (e.target.classList.contains('delete')) {
-        const fila = e.target.closest('tr');
-        const tituloElement = fila.querySelector('td:nth-child(1)');
-        const productoNombre = tituloElement.textContent.trim();
-        const titulo = productoNombre.split(' x')[0];
+    function eliminarElemento(e) {
+        if (e.target.classList.contains('delete')) {
+            const fila = e.target.closest('tr');
+            const tituloElement = fila.querySelector('td:nth-child(1)');
+            const productoNombre = tituloElement.textContent.trim();
+            const titulo = productoNombre.split(' x')[0];
 
-        if (carritoProductos[titulo]) {
-            if (carritoProductos[titulo].cantidad > 1) {
-                carritoProductos[titulo].cantidad--;
-            } else {
-                delete carritoProductos[titulo];
+            if (carritoProductos[titulo]) {
+                if (carritoProductos[titulo].cantidad > 1) {
+                    carritoProductos[titulo].cantidad--;
+                } else {
+                    delete carritoProductos[titulo];
+                }
+
+                actualizarCarrito();
+                fila.remove();
             }
-
-            const boton = document.querySelector(`.product[data-id="${titulo}"] .product-btn`);
-            console.log("Botón encontrado:", boton); 
-            if (boton) {
-                boton.textContent = 'Agregar al carrito';
-                boton.classList.remove('cart-added');
-            }
-
-            actualizarCarrito();
-            fila.remove();
         }
+        e.preventDefault();
+        e.stopPropagation();
     }
-    e.preventDefault();
-    e.stopPropagation();
-}
 
-    
-    
-    
     function vaciarCarrito() {
         carritoProductos = {};
         actualizarCarrito();
-    }       
+    }
 
     function actualizarCarrito() {
         lista.innerHTML = '';
         let total = 0;
-      
+
         for (const producto in carritoProductos) {
-          const { cantidad, precio } = carritoProductos[producto];
-      
-          const fila = document.createElement('tr');
-          fila.innerHTML = `
-            <td>
-              ${producto}
-              <input
-                type="number"
-                class="cantidad-input"
-                min="1"
-                max="5"
-                value="${cantidad}"
-              />
-            </td>
-            <td>
-              $${(precio * cantidad).toLocaleString('es-AR', {
-                minimumFractionDigits: 2,
-                maximumFractionDigits: 2,
-              })}
-            </td>
-            <td><a href="#" class="delete">X</a></td>
-          `;
-      
-          total += precio * cantidad;
-          lista.appendChild(fila);
-    
-          fila.querySelector('.cantidad-input').addEventListener('change', (e) => {
-            const nuevaCantidad = parseInt(e.target.value);
-            carritoProductos[producto].cantidad = nuevaCantidad;
-            actualizarCarrito();
-          });
+            const { cantidad, precio } = carritoProductos[producto];
+
+            const fila = document.createElement('tr');
+            fila.innerHTML = `
+                <td>
+                    ${producto}
+                    <input
+                        type="number"
+                        class="cantidad-input"
+                        min="1"
+                        max="5"
+                        value="${cantidad}"
+                    />
+                </td>
+                <td>
+                    $${formatNumber(precio * cantidad)}
+                </td>
+                <td><a href="#" class="delete">X</a></td>
+            `;
+
+            total += precio * cantidad;
+            lista.appendChild(fila);
+
+            fila.querySelector('.cantidad-input').addEventListener('change', (e) => {
+                const nuevaCantidad = parseInt(e.target.value);
+                carritoProductos[producto].cantidad = nuevaCantidad;
+                actualizarCarrito();
+            });
         }
-      
+
         const totalElement = document.getElementById('total');
-        totalElement.textContent = `Total: $${total.toLocaleString('es-AR', {
-          minimumFractionDigits: 2,
-          maximumFractionDigits: 2,
-        })}`;
+        totalElement.textContent = `Total: $${formatNumber(total)}`;
     }
-      
 
-        document.querySelectorAll('.cantidad-input').forEach((input) => {
-          input.addEventListener('change', (e) => {
-            const cantidadNueva = parseInt(e.target.value);
-            const fila = e.target.closest('tr');
-            const producto = fila.querySelector('td:nth-child(1)').textContent;
-
-            carritoProductos[producto].cantidad = Math.min(cantidadNueva, 5);
-      
-            actualizarCarrito();
-          });
-        });
-      });
+    function formatNumber(number) {
+        return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+    }
+});

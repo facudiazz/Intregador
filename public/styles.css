@@ -419,6 +419,15 @@ main .slider-main .slide img {
   }
 }
 
+@media screen and (width < 500px) {
+  main .all-products .product {
+    height: 700px;
+    width: 350px;
+  }
+  .slider img {
+    margin-top: 4rem;
+  }
+}
 .submenu {
   position: relative;
   font-family: "Poppins", sans-serif;
@@ -582,6 +591,32 @@ main .slider-main .slide img {
   .submenu .cantidad-input + * {
     margin-left: 0.5rem;
   }
+}
+footer {
+  background-color: #000;
+  color: #fff;
+  text-align: center;
+  padding: 1rem 0;
+}
+footer .footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+footer .footer-content p {
+  margin-bottom: 0.5rem;
+}
+footer .footer-content .social-icons {
+  margin-top: 0.5rem;
+}
+footer .footer-content .social-icons .social-icon {
+  color: #fff;
+  font-size: 1.2rem;
+  margin: 0 0.5rem;
+  transition: color 0.3s;
+}
+footer .footer-content .social-icons .social-icon:hover {
+  color: #cb393d;
 }
 
 /*# sourceMappingURL=styles.css.map */

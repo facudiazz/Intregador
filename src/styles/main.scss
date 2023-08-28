@@ -166,3 +166,14 @@ main {
         
 }
 
+@media screen and (width < 500px) {
+    main .all-products .product {
+        height: 700px;
+        width: 350px;
+    }
+
+    .slider img {
+        margin-top: 4rem;
+    }
+}
+
