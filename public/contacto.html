@@ -1,17 +1,27 @@
 <!DOCTYPE html>
 <html lang="es-ar">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0 , minimum/scale=1.0">
-    <meta name="author" content="Diamond System">
-    <meta name="copyright" content="Diamond System - Todos los derechos reservados">
-    <meta name="description" content="Somos una página de venta de productos electronicos. Contamos con locales en todo Buenos Aires.">
-    <meta name="keywords" content="Diamond System, Teclados, Mouse, Placas de video, tienda, mother, procesador">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0 , minimum/scale=1.0"
+    />
+    <meta name="author" content="Diamond System" />
+    <meta
+      name="copyright"
+      content="Diamond System - Todos los derechos reservados"
+    />
+    <meta
+      name="description"
+      content="Somos una página de venta de productos electronicos. Contamos con locales en todo Buenos Aires."
+    />
+    <meta
+      name="keywords"
+      content="Diamond System, Teclados, Mouse, Placas de video, tienda, mother, procesador"
+    />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
     <title>Diamond System</title>
-
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -26,81 +36,98 @@
       src="https://kit.fontawesome.com/7e9799981f.js"
       crossorigin="anonymous"
     ></script>
-
   </head>
-<body>
-  <header>
-    <a href="index.html"
-      ><img src="img/logo.png" alt="imagen" width="70px" height="55px"
-    /></a>
+  <body>
+    <header>
+      <a href="index.html"
+        ><img src="img/logo.png" alt="imagen" width="70px" height="55px"
+      /></a>
 
-    <h2><a href="index.html">Diamond System</a></h2>
+      <h2><a href="index.html">Diamond System</a></h2>
 
-    <a href="javascript:void(0);" onclick="openMenu()" id="menu">
-      <button class="menu__icon">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-    </a>
+      <a href="javascript:void(0);" onclick="openMenu()" id="menu">
+        <button class="menu__icon">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </a>
 
-    <ul class="nav-list" id="links">
-      <li><a href="index.html">Inicio</a></li>
-      <li><a href="alta.html">Alta</a></li>
-      <li><a href="contacto.html">Contacto</a></li>
-      <li><a href="nosotros.html">Nosotros</a></li>
-    </ul>
+      <ul class="nav-list" id="links">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="alta.html">Alta</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+        <li><a href="nosotros.html">Nosotros</a></li>
+      </ul>
 
-    <div class="container">
-      <input
-        type="text"
-        name="text"
-        class="input"
-        placeholder="Buscar productos"
-      />
-      <button class="search__btn">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 24 24"
-          width="22"
-          height="22"
-        >
-          <path
-            d="M18.031 16.6168L22.3137 20.8995L20.8995 22.3137L16.6168 18.031C15.0769 19.263 13.124 20 11 20C6.032 20 2 15.968 2 11C2 6.032 6.032 2 11 2C15.968 2 20 6.032 20 11C20 13.124 19.263 15.0769 18.031 16.6168ZM16.0247 15.8748C17.2475 14.6146 18 12.8956 18 11C18 7.1325 14.8675 4 11 4C7.1325 4 4 7.1325 4 11C4 14.8675 7.1325 18 11 18C12.8956 18 14.6146 17.2475 15.8748 16.0247L16.0247 15.8748Z"
-            fill="#efeff1"
-          ></path>
-        </svg>
-      </button>
-    </div>
-  </header>
-  <main>
-    <section class="survey">
+      <div class="container">
+        <input
+          type="text"
+          name="text"
+          class="input"
+          placeholder="Buscar productos"
+        />
+        <button class="search__btn">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            width="22"
+            height="22"
+          >
+            <path
+              d="M18.031 16.6168L22.3137 20.8995L20.8995 22.3137L16.6168 18.031C15.0769 19.263 13.124 20 11 20C6.032 20 2 15.968 2 11C2 6.032 6.032 2 11 2C15.968 2 20 6.032 20 11C20 13.124 19.263 15.0769 18.031 16.6168ZM16.0247 15.8748C17.2475 14.6146 18 12.8956 18 11C18 7.1325 14.8675 4 11 4C7.1325 4 4 7.1325 4 11C4 14.8675 7.1325 18 11 18C12.8956 18 14.6146 17.2475 15.8748 16.0247L16.0247 15.8748Z"
+              fill="#efeff1"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </header>
+    <main>
+      <section class="survey">
         <form id="survey-form">
           <div>
-            <label for="name" id="name-label">Nombre <span class="required">*</span></label>
-              <input type="text" id="name" required placeholder="Ingresá tu nombre" />
+            <label for="name" id="name-label"
+              >Nombre <span class="required">*</span></label
+            >
+            <input
+              type="text"
+              id="name"
+              required
+              placeholder="Ingresá tu nombre"
+            />
             <span id="name-error" class="error"></span>
           </div>
-        <div>
-          <label for="last-name" id="lastName-label">Apellido <span class="required">*</span></label>
+
+          <div>
+            <label for="last-name" id="lastName-label"
+              >Apellido <span class="required">*</span></label
+            >
             <input
               type="text"
               id="last-name"
               required
-              placeholder="Ingresá tu apellido"/>
-          <span id="last-name-error" class="error"></span>
-        </div>
-        <div>
-          <label for="email" id="email-label">Email <span class="required">*</span></label>
+              placeholder="Ingresá tu apellido"
+            />
+            <span id="last-name-error" class="error"></span>
+          </div>
+
+          <div>
+            <label for="email" id="email-label"
+              >Email <span class="required">*</span></label
+            >
             <input
               type="email"
               id="email"
               required
-              placeholder="Ingresá tu email"/>
-          <span id="email-error" class="error"></span>
+              placeholder="Ingresá tu email"
+            />
+            <span id="email-error" class="error"></span>
+          </div>
 
           <div>
-            <label for="phone" id="phone-label">Teléfono <span class="required">*</span></label>
+            <label for="phone" id="phone-label"
+              >Teléfono <span class="required">*</span></label
+            >
             <input
               type="tel"
               id="phone"
@@ -111,38 +138,47 @@
             />
             <span id="phone-error" class="error"></span>
           </div>
-          
 
           <div>
             <label for="comments" id="comments-label">Comentarios</label>
-              <input
-                type="text"
-                id="comments"
-                min="8"
-                max="22"
-                placeholder="Ingresá un comentario (opcional)"/>
+            <input
+              type="text"
+              id="comments"
+              min="8"
+              max="22"
+              placeholder="Ingresá un comentario (opcional)"
+            />
             <span id="comments-error" class="error"></span>
           </div>
-        <div>
-          <input id="submit" type="submit" name="Agregar Producto"/>
-        </div>
 
-        
-    </section>
-
-    
-
+          <div>
+            <input id="submit" type="submit" name="Agregar Producto" />
+          </div>
+        </form>
+      </section>
     </main>
     <footer>
       <div class="footer-content">
         <p>&copy; 2023 Diamond System. Todos los derechos reservados.</p>
         <div class="social-icons">
-          <a href="https://www.facebook.com/" class="social-icon" target="_blank"><i class="fab fa-facebook-f"></i></a>
-          <a href="https://www.twitter.com/" class="social-icon" target="_blank"><i class="fab fa-twitter"></i></a>
-          <a href="https://www.instagram.com/" class="social-icon" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a
+            href="https://www.facebook.com/"
+            class="social-icon"
+            target="_blank"
+            ><i class="fab fa-facebook-f"></i
+          ></a>
+          <a href="https://www.twitter.com/" class="social-icon" target="_blank"
+            ><i class="fab fa-twitter"></i
+          ></a>
+          <a
+            href="https://www.instagram.com/"
+            class="social-icon"
+            target="_blank"
+            ><i class="fab fa-instagram"></i
+          ></a>
         </div>
       </div>
     </footer>
     <script src="../src/validation-contacto.js"></script>
-</body>
+  </body>
 </html>

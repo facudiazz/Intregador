@@ -1,17 +1,27 @@
 <!DOCTYPE html>
 <html lang="es-ar">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0 , minimum/scale=1.0">
-    <meta name="author" content="Diamond System">
-    <meta name="copyright" content="Diamond System - Todos los derechos reservados">
-    <meta name="description" content="Somos una página de venta de productos electronicos. Contamos con locales en todo Buenos Aires.">
-    <meta name="keywords" content="Diamond System, Teclados, Mouse, Placas de video, tienda, mother, procesador">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0 , minimum/scale=1.0"
+    />
+    <meta name="author" content="Diamond System" />
+    <meta
+      name="copyright"
+      content="Diamond System - Todos los derechos reservados"
+    />
+    <meta
+      name="description"
+      content="Somos una página de venta de productos electronicos. Contamos con locales en todo Buenos Aires."
+    />
+    <meta
+      name="keywords"
+      content="Diamond System, Teclados, Mouse, Placas de video, tienda, mother, procesador"
+    />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
     <title>Diamond System</title>
-
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -26,10 +36,8 @@
       src="https://kit.fontawesome.com/7e9799981f.js"
       crossorigin="anonymous"
     ></script>
-
   </head>
   <body>
-    
     <header>
       <a href="index.html"
         ><img src="img/logo.png" alt="imagen" width="70px" height="55px"
@@ -41,8 +49,9 @@
         <button class="menu__icon">
           <span></span>
           <span></span>
-          <span></span></button>
-        </a>
+          <span></span>
+        </button>
+      </a>
 
       <ul class="nav-list" id="links">
         <li><a href="index.html">Inicio</a></li>
@@ -73,49 +82,66 @@
         </button>
       </div>
     </header>
-      <h1>
-        Registrá tu producto
-      </h1>
+    <h1>Registrá tu producto</h1>
     <main>
-    <section class="survey">
+      <section class="survey">
         <form id="survey-form">
           <div>
-            <label for="name" id="name-label">Nombre del producto <span class="required">*</span></label>
-              <input type="text" id="name" required placeholder="Ingresa el nombre del producto" />
+            <label for="name" id="name-label"
+              >Nombre del producto <span class="required">*</span></label
+            >
+            <input
+              type="text"
+              id="name"
+              required
+              placeholder="Ingresa el nombre del producto"
+            />
             <span id="name-error" class="error"></span>
           </div>
-        <div>
-          <label for="price" id="price-label">Precio del producto <span class="required">*</span></label>
+          <div>
+            <label for="price" id="price-label"
+              >Precio del producto <span class="required">*</span></label
+            >
             <input
               type="number"
               id="price"
               required
-              placeholder="Precio del producto en pesos argentinos"/>
-          <span id="price-error" class="error"></span>
-        </div>
-        <div>
-          <label for="description" id="description-label">Descripcion del producto <span class="required">*</span></label>
+              placeholder="Precio del producto en pesos argentinos"
+            />
+            <span id="price-error" class="error"></span>
+          </div>
+          <div>
+            <label for="description" id="description-label"
+              >Descripcion del producto <span class="required">*</span></label
+            >
             <input
               type="text"
               id="description"
-              min="8"
-              max="22"
-              placeholder="Ingresa la descripción del producto"/>
-          <span id="description-error" class="error"></span>
-        </div>
+              placeholder="Ingresa la descripción del producto"
+            />
+            <span id="description-error" class="error"></span>
+          </div>
 
-        <div>
-          <h4 class="photo-h4">Foto del producto <span class="required">*</span></h4>
-          <div class="file-input-container">
-            <label for="photo" class="custom-file-upload">
-              <i class="fas fa-cloud-upload-alt"></i><span>Seleccionar foto</span>
-            </label>
-            <input type="file" id="photo" name="photo" accept="image/*" onchange="handleFileSelect(this)">
-          </div>          
-          
-        </div>
+          <div>
+            <h4 class="photo-h4">
+              Foto del producto <span class="required">*</span>
+            </h4>
+            <div class="file-input-container">
+              <label for="photo" class="custom-file-upload">
+                <i class="fas fa-cloud-upload-alt"></i
+                ><span>Seleccionar foto</span>
+              </label>
+              <input
+                type="file"
+                id="photo"
+                name="photo"
+                accept="image/*"
+                onchange="handleFileSelect(this)"
+              />
+            </div>
+          </div>
 
-<!-- 
+          <!-- 
         <p>Categoria del producto (Proximamente)</p>
         <select id="dropdown">
           <option disabled selected>Seleccioná una categoría</option>
@@ -129,25 +155,37 @@
           <option>Memorias RAM</option>
           <option>Discos duros / solidos</option>
         </select> -->
-    
-        <div>
-          <input id="submit" type="submit" name="Agregar Producto"/>
-        </div>
-    </section>
 
+          <div>
+            <input id="submit" type="submit" name="Agregar Producto" />
+          </div>
+        </form>
+      </section>
     </main>
 
     <footer>
       <div class="footer-content">
         <p>&copy; 2023 Diamond System. Todos los derechos reservados.</p>
         <div class="social-icons">
-          <a href="https://www.facebook.com/" class="social-icon" target="_blank"><i class="fab fa-facebook-f"></i></a>
-          <a href="https://www.twitter.com/" class="social-icon" target="_blank"><i class="fab fa-twitter"></i></a>
-          <a href="https://www.instagram.com/" class="social-icon" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a
+            href="https://www.facebook.com/"
+            class="social-icon"
+            target="_blank"
+            ><i class="fab fa-facebook-f"></i
+          ></a>
+          <a href="https://www.twitter.com/" class="social-icon" target="_blank"
+            ><i class="fab fa-twitter"></i
+          ></a>
+          <a
+            href="https://www.instagram.com/"
+            class="social-icon"
+            target="_blank"
+            ><i class="fab fa-instagram"></i
+          ></a>
         </div>
       </div>
     </footer>
 
     <script src="../src/validation-alta.js"></script>
-</body>
+  </body>
 </html>
